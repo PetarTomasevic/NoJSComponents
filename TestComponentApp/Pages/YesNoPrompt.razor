@@ -1,0 +1,31 @@
+﻿@inject INoJSModalService ModalService
+
+@if (ShowForm)
+{
+    <div class="simple-form">
+        <div class="form-group">
+            Are you sure you want to delete the record?
+        </div>
+
+        <button @onclick="Yes" class="btn btn-outline-danger">Delete</button>
+        <button @onclick="No" class="btn btn-primary">Cancel</button>
+    </div>
+}
+
+@code {
+
+    [CascadingParameter] NoJSModalParameters Parameters { get; set; }
+    bool ShowForm { get; set; } = true;
+
+    void Yes()
+    {
+        ModalService.Close(
+            NoJSModalResult.Ok($"The user said 'Yes'"));
+    }
+
+    void No()
+    {
+        ModalService.Close(NoJSModalResult.Cancel());
+    }
+
+}
