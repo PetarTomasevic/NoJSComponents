@@ -1,0 +1,12 @@
+﻿/*
+    This file is to show how CSS and other static resources (such as images) can be
+    used from a library project/package.
+*/
+
+.nojs-card-item-active {
+    display: flex;
+}
+
+.nojs-card-item-inactive {
+    display: none;
+}

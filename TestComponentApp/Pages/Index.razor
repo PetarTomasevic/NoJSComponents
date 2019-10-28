@@ -1,12 +1,12 @@
 ﻿@page "/"
 @inject INoJSModalService Modal
 @inject INoJSToastService NoJSToast
+@inject INoJSCardService Card
+@using Microsoft.AspNetCore.Html
 <h1>Hello, world!</h1>
 <button @onclick="@ShowModal" class="btn btn-primary">Show Modal</button>
 
 <button @onclick="@ShowModalAsYesNoPrompt" class="btn btn-primary">Show Modal styled as a prompt</button>
-
-
 
 TOAST test:
 <button class="btn btn-info" @onclick="@(() => NoJSToast.ShowToast("I'm an INFO message", NoJSToastLevel.Info))">Info Toast</button>
@@ -14,7 +14,29 @@ TOAST test:
 <button class="btn btn-warning" @onclick="@(() => NoJSToast.ShowToast("I'm a WARNING message", NoJSToastLevel.Warning))">Warning Toast</button>
 <button class="btn btn-danger" @onclick="@(() => NoJSToast.ShowToast("I'm an ERROR message", NoJSToastLevel.Error))">Error Toast</button>
 
+Card Test:
+<NoJSCard FooterIsVisible="true" HeaderIsVisible="true" Title="@(titleText)" Footer="@(footerText)">
+    <CardExampleForm></CardExampleForm>
+</NoJSCard>
+
+Card Test2:
+<NoJSCard FooterIsVisible="false" HeaderIsVisible="false" Title="@(titleText)" Footer="@(footerText)">
+    <div class="simple-form">
+
+        <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" class="form-control" id="first-name" placeholder="Enter First Name" />
+        </div>
+    </div>
+</NoJSCard>
+
 @code {
+
+    MarkupString titleText = new MarkupString("<h4 class=\"text-uppercase text-center\">HTML 5 from Select</h4>");
+    MarkupString footerText = new MarkupString(
+        "<footer class=\"page - " +
+        "footer font - small blue\"><div class=\"footer-copyright text-center py-3\">© 2018 Copyright:" +
+    "<a href=\"https://mdbootstrap.com/education/bootstrap/\"> MDBootstrap.com</a></div></footer>");
 
     void ShowModal()
     {

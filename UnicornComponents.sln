@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestComponentApp", "TestComponentApp\TestComponentApp.csproj", "{6062004E-D430-4644-AD25-4EE6CED64B28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestComponentApp", "TestComponentApp\TestComponentApp.csproj", "{6062004E-D430-4644-AD25-4EE6CED64B28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.Modal", "NoJS.Modal\NoJS.Modal.csproj", "{C95039A4-173F-4856-8F99-1AFFCBBC52A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Modal", "NoJS.Modal\NoJS.Modal.csproj", "{C95039A4-173F-4856-8F99-1AFFCBBC52A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.Toast", "NoJS.Toast\NoJS.Toast.csproj", "{2D4AA5D3-1D41-4D6C-ACA0-B7E91A46775B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Toast", "NoJS.Toast\NoJS.Toast.csproj", "{2D4AA5D3-1D41-4D6C-ACA0-B7E91A46775B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Card", "NoJS.Card\NoJS.Card.csproj", "{D07C7CA0-28A5-4359-874A-59DABB0B595B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2D4AA5D3-1D41-4D6C-ACA0-B7E91A46775B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D4AA5D3-1D41-4D6C-ACA0-B7E91A46775B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D4AA5D3-1D41-4D6C-ACA0-B7E91A46775B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

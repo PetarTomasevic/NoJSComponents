@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NoJS.Card;
 using NoJS.Modal;
 using NoJS.Toast;
 using TestComponentApp.Data;
@@ -33,6 +34,8 @@ namespace TestComponentApp
             services.AddSingleton<WeatherForecastService>();
             services.AddNoJSModal();
             services.AddNoJSToast();
+            services.AddNoJSCard();
+      
 
         }
 

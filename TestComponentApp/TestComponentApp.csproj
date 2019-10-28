@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NoJS.Card\NoJS.Card.csproj" />
     <ProjectReference Include="..\NoJS.Toast\NoJS.Toast.csproj" />
   </ItemGroup>
 
