@@ -13,7 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Card", "NoJS.Card\NoJS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Storage", "NoJS.Storage\NoJS.Storage.csproj", "{2828E353-5E9A-4E7B-8039-8A212C473399}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.PDFViewer", "NoJS.PDFViewer\NoJS.PDFViewer.csproj", "{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.PDFViewer", "NoJS.PDFViewer\NoJS.PDFViewer.csproj", "{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76089A0B-7633-4EAD-BFA1-8BE4C0303CC2}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		work-in-progress.jpg = work-in-progress.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
