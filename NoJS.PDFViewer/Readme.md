@@ -5,7 +5,7 @@ Small component to enable displaying and downloading PDF files/documents in Blaz
 
 To install NuGet package run
 
-      Install-Package NoJS.PDFViewer -Version 1.0.0
+      Install-Package NoJS.PDFViewer -Version 1.0.1
 
 In **_Imports.razor**
  add
