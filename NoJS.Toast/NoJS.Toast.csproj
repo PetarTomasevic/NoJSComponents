@@ -10,6 +10,7 @@
     <Authors>Petar Tomašević</Authors>
     <Company>Petar Tomašević</Company>
     <PackageProjectUrl>https://github.com/PetarTomasevic/NoJSComponents/tree/master/NoJS.Toast</PackageProjectUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

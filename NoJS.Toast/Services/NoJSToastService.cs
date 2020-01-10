@@ -3,21 +3,23 @@ using System.Timers;
 
 namespace NoJS.Toast.Services
 {
-    public class NoJSToastService : INoJSToastService,IDisposable
+    public class NoJSToastService : INoJSToastService, IDisposable
     {
         public event Action<string, NoJSToastLevel> OnShow;
+
         public event Action OnHide;
+
         private Timer Countdown;
 
-        public void ShowToast(string message, NoJSToastLevel level)
+        public void ShowToast(string message, NoJSToastLevel level, double interval)
         {
             OnShow?.Invoke(message, level);
-            StartCountdown();
+            StartCountdown(interval);
         }
 
-        public void StartCountdown()
+        public void StartCountdown(double interval)
         {
-            SetCountdown();
+            SetCountdown(interval);
 
             if (Countdown.Enabled)
             {
@@ -30,11 +32,11 @@ namespace NoJS.Toast.Services
             }
         }
 
-        public void SetCountdown()
+        public void SetCountdown(double interval)
         {
             if (Countdown == null)
             {
-                Countdown = new Timer(5000);
+                Countdown = new Timer(interval);
                 Countdown.Elapsed += HideToast;
                 Countdown.AutoReset = false;
             }
