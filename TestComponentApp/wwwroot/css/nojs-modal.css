@@ -110,6 +110,6 @@
     box-shadow: 0 2px 2px rgba(0,0,0,.75);
 }
 
-.nojs-prompt-modal .nojs-modal-header {
+    .nojs-prompt-modal .nojs-modal-header {
         display: none;
     }

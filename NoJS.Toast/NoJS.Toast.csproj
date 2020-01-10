@@ -4,9 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
     <Copyright>Petar Tomašević</Copyright>
-    <Description>Blazor Modal Component Library</Description>
+    <Description>Blazor Toast Component</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Petar Tomašević</Authors>
+    <Company>Petar Tomašević</Company>
+    <PackageProjectUrl>https://github.com/PetarTomasevic/NoJSComponents/tree/master/NoJS.Toast</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

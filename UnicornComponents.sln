@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Toast", "NoJS.Toast\No
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Card", "NoJS.Card\NoJS.Card.csproj", "{D07C7CA0-28A5-4359-874A-59DABB0B595B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.Storage", "NoJS.Storage\NoJS.Storage.csproj", "{2828E353-5E9A-4E7B-8039-8A212C473399}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.PDFViewer", "NoJS.PDFViewer\NoJS.PDFViewer.csproj", "{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D07C7CA0-28A5-4359-874A-59DABB0B595B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2828E353-5E9A-4E7B-8039-8A212C473399}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2828E353-5E9A-4E7B-8039-8A212C473399}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2828E353-5E9A-4E7B-8039-8A212C473399}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2828E353-5E9A-4E7B-8039-8A212C473399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE8AFF1-92B9-4E01-AD28-19944E1E1B54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

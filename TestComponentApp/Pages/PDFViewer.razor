@@ -1,0 +1,30 @@
+﻿@page "/pdfviewer"
+@using System.Text;
+<NoJS.PDFViewer.PDFViewer 
+                          Document="@getBytesFromPDF()" 
+                          DocumentHeight="100%" 
+                          DocumentName="@DocumentName()" 
+                          DocumentWidth="100%" 
+                          SaveBtnImage="css/nojs-icons/icons8-save-26.png" />
+
+@code{
+
+
+    //fetch your pdf from your machine or from your service
+    public static string pdfFilePath = "C:/pdftest/Report.pdf";
+
+    public byte[] getBytesFromPDF()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(pdfFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+
+    public string DocumentName()
+    {
+        //use your way to fetch your file name or generate one
+        return "ExamplePdf";
+    }
+
+}

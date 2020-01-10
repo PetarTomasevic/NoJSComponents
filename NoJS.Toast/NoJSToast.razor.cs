@@ -14,12 +14,6 @@ namespace NoJS.Toast
         protected string BackgroundCssClass { get; set; }
         protected string IconCssClass { get; set; }
 
-
-        //protected override void OnInit()
-        //{
-        //    NoJSToastService.OnShow += ShowToast;
-        //    NoJSToastService.OnHide += HideToast;
-        //}
         protected override void OnInitialized()
         {
             ((NoJSToastService)NoJSToastService).OnShow += ShowToast;
@@ -33,7 +27,6 @@ namespace NoJS.Toast
             //StateHasChanged();
             InvokeAsync(() =>
             {
-
                 StateHasChanged();
             });
         }
@@ -41,12 +34,11 @@ namespace NoJS.Toast
         public void HideToast()
         {
             IsVisible = false;
-        //StateHasChanged();
-        InvokeAsync(() =>
-        {
-
-            StateHasChanged();
-        });
+            //StateHasChanged();
+            InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
         }
 
         public void BuildToastSettings(NoJSToastLevel level, string message)
@@ -58,16 +50,19 @@ namespace NoJS.Toast
                     IconCssClass = "info";
                     Heading = "Info";
                     break;
+
                 case NoJSToastLevel.Success:
                     BackgroundCssClass = $"bg-success";
                     IconCssClass = "check";
                     Heading = "Success";
                     break;
+
                 case NoJSToastLevel.Warning:
                     BackgroundCssClass = $"bg-warning";
                     IconCssClass = "exclamation";
                     Heading = "Warning";
                     break;
+
                 case NoJSToastLevel.Error:
                     BackgroundCssClass = $"bg-danger";
                     IconCssClass = "times";
