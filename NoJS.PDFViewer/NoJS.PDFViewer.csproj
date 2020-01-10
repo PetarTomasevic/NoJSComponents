@@ -6,7 +6,10 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Copyright>Petar Tomašević</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>Blazor PDF Viewer Component Library</Description>
+    <Description>Small component to enable displaying and downloading PDF files/documents in Blazor.</Description>
+    <PackageProjectUrl>https://github.com/PetarTomasevic/NoJSComponents/blob/master/NoJS.PDFViewer/Readme.md</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/PetarTomasevic/NoJSComponents/blob/master/NoJS.PDFViewer</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
