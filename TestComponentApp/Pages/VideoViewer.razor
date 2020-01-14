@@ -1,0 +1,10 @@
+﻿@page "/videoviewer"
+
+<NoJS.Video.VideoViewer VideoSource="@videoSource" VideoType="@videoType" VideoWidth="100%"></NoJS.Video.VideoViewer>
+
+@code {
+
+    public string videoSource = "https://localhost:44378/videotest/testvideo.mp4";
+    public string videoType = "video/ mp4";
+
+}

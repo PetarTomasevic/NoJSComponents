@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		work-in-progress.jpg = work-in-progress.jpg
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.DocumentViewer", "NoJS.DocumentViewer\NoJS.DocumentViewer.csproj", "{6ECD9867-4F02-4A22-91E6-2DD06122EDAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoJS.DocumentViewer", "NoJS.DocumentViewer\NoJS.DocumentViewer.csproj", "{6ECD9867-4F02-4A22-91E6-2DD06122EDAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoJS.Video", "NoJS.Video\NoJS.Video.csproj", "{464F868C-76DF-4DC2-B231-1C49F344A6A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{6ECD9867-4F02-4A22-91E6-2DD06122EDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ECD9867-4F02-4A22-91E6-2DD06122EDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ECD9867-4F02-4A22-91E6-2DD06122EDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464F868C-76DF-4DC2-B231-1C49F344A6A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464F868C-76DF-4DC2-B231-1C49F344A6A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464F868C-76DF-4DC2-B231-1C49F344A6A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464F868C-76DF-4DC2-B231-1C49F344A6A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

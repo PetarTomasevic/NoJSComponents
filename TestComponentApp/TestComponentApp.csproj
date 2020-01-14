@@ -24,9 +24,15 @@
   <ItemGroup>
     <ProjectReference Include="..\NoJS.Card\NoJS.Card.csproj" />
     <ProjectReference Include="..\NoJS.Toast\NoJS.Toast.csproj" />
+    <ProjectReference Include="..\NoJS.Video\NoJS.Video.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="wwwroot\videotest\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\videotest\testvideo.mp4" />
   </ItemGroup>
 </Project>
