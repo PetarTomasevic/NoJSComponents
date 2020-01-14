@@ -16,18 +16,17 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="NoJS.DocumentViewer" Version="1.0.0" />
     <PackageReference Include="NoJS.Modal" Version="1.0.0" />
     <PackageReference Include="NoJS.PDFViewer" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NoJS.Card\NoJS.Card.csproj" />
-    <ProjectReference Include="..\NoJS.DocumentViewer\NoJS.DocumentViewer.csproj" />
     <ProjectReference Include="..\NoJS.Toast\NoJS.Toast.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
-
 </Project>

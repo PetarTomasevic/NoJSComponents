@@ -5,6 +5,7 @@ namespace NoJS.PDFViewer
 {
     public class PDFViewerBase : ComponentBase, IDisposable
     {
+        private bool disposedValue = false;
         [Parameter] public byte[] Document { get; set; }
 
         [Parameter] public string DocumentWidth { get; set; }
@@ -14,6 +15,19 @@ namespace NoJS.PDFViewer
 
         public void Dispose()
         {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                }
+
+                disposedValue = true;
+            }
         }
     }
 }

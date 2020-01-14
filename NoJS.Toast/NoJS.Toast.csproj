@@ -11,6 +11,7 @@
     <Company>Petar Tomašević</Company>
     <PackageProjectUrl>https://github.com/PetarTomasevic/NoJSComponents/tree/master/NoJS.Toast</PackageProjectUrl>
     <Version>1.0.1</Version>
+    <RepositoryUrl>https://github.com/PetarTomasevic/NoJSComponents</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

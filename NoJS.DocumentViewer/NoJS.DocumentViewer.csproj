@@ -1,14 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
+    <PackageProjectUrl>https://github.com/PetarTomasevic/NoJSComponents/tree/master/NoJS.DocumentViewer</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Blazor Document Viewer Component</Description>
+    <RepositoryUrl>https://github.com/PetarTomasevic/NoJSComponents</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Petar Tomašević</Copyright>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.0" />
   </ItemGroup>
-
 </Project>

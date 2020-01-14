@@ -4,7 +4,7 @@ using System;
 
 namespace NoJS.DocumentViewer
 {
-    public class DocumentViewerBase : ComponentBase, IDisposable
+    public class DocumentViewerBase : ComponentBase
     {
         [Parameter] public byte[] Document { get; set; }
 
@@ -14,9 +14,5 @@ namespace NoJS.DocumentViewer
         [Parameter] public string DocumentName { get; set; }
 
         [Parameter] public string DocumentType { get; set; }
-
-        public void Dispose()
-        {
-        }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class NoJSDocumentViewerService
     {
-        public class DocumentType
+        public static class DocumentType
         {
             public const string PDF = "application/pdf";
             public const string JPEG = "image/jpeg";
