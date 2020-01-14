@@ -1,0 +1,10 @@
+﻿@inherits NoJS.DocumentViewer.DocumentViewerBase
+@inject Microsoft.JSInterop.IJSRuntime JSRuntime
+<a href="data:@DocumentType;base64,@Convert.ToBase64String(Document)" download="@DocumentName"><img src="@SaveBtnImage" /></a>
+
+<object id="document" data="data:@DocumentType;base64,@Convert.ToBase64String(Document)" width="@DocumentWidth" height="@DocumentHeight" type="@DocumentType">
+    <span class="not-supported-text">Your browser does not support preview of this file. Clik on button to download and view file.</span>
+</object>
+
+@code {
+}

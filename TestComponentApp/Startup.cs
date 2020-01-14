@@ -10,6 +10,7 @@ using NoJS.Card;
 using NoJS.Modal;
 using NoJS.Toast;
 using Microsoft.Extensions.Logging;
+using NoJS.DocumentViewer;
 
 namespace TestComponentApp
 {
@@ -31,6 +32,7 @@ namespace TestComponentApp
             services.AddNoJSModal();
             services.AddNoJSToast();
             services.AddNoJSCard();
+            services.AddNoJSDocumentViewer();
 
             //Logiranje
         }

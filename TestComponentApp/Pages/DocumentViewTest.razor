@@ -1,0 +1,93 @@
+﻿@page "/documentviewer"
+<NoJS.DocumentViewer.DocumentViewer Document="getBytesFromPDF()"
+                                    DocumentHeight="100%"
+                                    DocumentName="@docNamePdf"
+                                    DocumentWidth="100%"
+                                    SaveBtnImage="css/nojs-icons/icons8-save-26.png"
+                                    DocumentType="@docTypePDF" />
+<br />
+<NoJS.DocumentViewer.DocumentViewer Document="getBytesFromWord()"
+                                    DocumentHeight="100%"
+                                    DocumentName="@docNameWord"
+                                    DocumentWidth="100%"
+                                    SaveBtnImage="css/nojs-icons/icons8-save-26.png"
+                                    DocumentType="@docTypeWord" />
+<br />
+<NoJS.DocumentViewer.DocumentViewer Document="getBytesFromExcel()"
+                                    DocumentHeight="100%"
+                                    DocumentName="@docNameExcel"
+                                    DocumentWidth="100%"
+                                    SaveBtnImage="css/nojs-icons/icons8-save-26.png"
+                                    DocumentType="@docTypeExcel" />
+<br />
+<NoJS.DocumentViewer.DocumentViewer Document="getBytesFromGIF()"
+                                    DocumentHeight="100%"
+                                    DocumentName="@docNameGif"
+                                    DocumentWidth="100%"
+                                    SaveBtnImage="css/nojs-icons/icons8-save-26.png"
+                                    DocumentType="@docTypeGif" />
+<br />
+<NoJS.DocumentViewer.DocumentViewer Document="getBytesFromJPG()"
+                                    DocumentHeight="100%"
+                                    DocumentName="@docNameImage"
+                                    DocumentWidth="100%"
+                                    SaveBtnImage="css/nojs-icons/icons8-save-26.png"
+                                    DocumentType="@docTypeJpeg" />
+
+@code {
+    string docTypePDF = NoJSDocumentViewerService.DocumentType.PDF;
+    string docTypeWord = NoJSDocumentViewerService.DocumentType.MicrosoftWordDocx;
+    string docTypeExcel = NoJSDocumentViewerService.DocumentType.MicrosoftExcelXlsx;
+    string docTypeJpeg = NoJSDocumentViewerService.DocumentType.JPEG;
+    string docTypeGif = NoJSDocumentViewerService.DocumentType.GIF;
+    string docNamePdf = "ExamplePdf";
+    string docNameWord = "ExampleWord";
+    string docNameExcel = "ExampleExcel";
+    string docNameImage = "ExampleImage";
+    string docNameGif = "ExampleGif";
+    //fetch your pdf from your machine or from your service
+    public static string pdfFilePath = "C:/pdftest/Report.pdf";
+    public static string wordFilePath = "C:/pdftest/DownloadWord.docx";
+    public static string excelFilePath = "C:/pdftest/excelldownloadtest.xlsx";
+    public static string jpegFilePath = "C:/pdftest/testimage.jpg";
+    public static string gifFilePath = "C:/pdftest/source.gif";
+
+    public byte[] getBytesFromPDF()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(pdfFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+
+    public byte[] getBytesFromWord()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(wordFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+
+    public byte[] getBytesFromExcel()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(excelFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+    public byte[] getBytesFromJPG()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(jpegFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+    public byte[] getBytesFromGIF()
+    {
+        //Get byte[] from  your API or services
+        var abc = System.IO.File.ReadAllBytes(gifFilePath);
+        var get64 = Convert.ToBase64String(abc);
+        return abc;
+    }
+
+}
