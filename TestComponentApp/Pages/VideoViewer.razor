@@ -1,10 +1,49 @@
 ﻿@page "/videoviewer"
+@*<NoJS.Video.VideoViewer VideoSource="@videoSource" VideoType="@videoType" VideoWidth="100%"></NoJS.Video.VideoViewer>*@
 
-<NoJS.Video.VideoViewer VideoSource="@videoSource" VideoType="@videoType" VideoWidth="100%"></NoJS.Video.VideoViewer>
+subtitles
 
+<NoJS.Video.VideoViewer VideoSource="@videoSource2"
+                        VideoType="@videoType"
+                        VideoWidth="400"
+                        NotSupportedText="Youre Browser is obsolete!"
+                        PosterImage="@poster"
+                        SubtitlesList="@languagesList()"
+                        VideoId="@video2ID"></NoJS.Video.VideoViewer>
+
+<video width="400" controls>
+    <source src="@videoSource" type="video/mp4">
+</video>
 @code {
 
     public string videoSource = "https://localhost:44378/videotest/testvideo.mp4";
-    public string videoType = "video/ mp4";
+    public string videoSource2 = "https://localhost:44378/videotest/jellies.mp4";
+    public string poster = "https://localhost:44378/videotest/blazor.png";
+    public string videoType = "video/mp4";
+    public string video2ID = "jellies";
 
+    public List<NoJS.Video.Data.TrackItem> languagesList()
+    {
+        List<NoJS.Video.Data.TrackItem> generateSubtitles = new List<NoJS.Video.Data.TrackItem>();
+
+        NoJS.Video.Data.TrackItem item1 = new NoJS.Video.Data.TrackItem();
+        item1.SetAsDefault = true;
+        item1.Kind = "subtitles";
+        item1.Label = "English";
+        item1.SrcLang = "en";
+        item1.Src = "https://localhost:44378/videotest/jellies-en.vtt";
+
+        generateSubtitles.Add(item1);
+
+        NoJS.Video.Data.TrackItem item2 = new NoJS.Video.Data.TrackItem();
+        item2.SetAsDefault = false;
+        item2.Kind = "subtitles";
+        item2.Label = "Croatian";
+        item2.SrcLang = "hr";
+        item2.Src = "https://localhost:44378/videotest/jellies-hr.vtt";
+
+        generateSubtitles.Add(item2);
+
+        return generateSubtitles;
+    }
 }

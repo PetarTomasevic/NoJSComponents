@@ -1,13 +1,22 @@
 ﻿@inherits NoJS.Video.VideoViewerBase
 
-<video controls width="@VideoWidth">
+<video width="@VideoWidth" controls poster="@PosterImage">
+    <source src="@VideoSource" type="@VideoType">
+    @if (SubtitlesList != null)
+    {
+        @foreach (var item in SubtitlesList)
+        {
 
-    <source src="@VideoSource"
-            type="@VideoType">
+            if (@item.SetAsDefault)
+            {
+                <track label="@item.Label" kind="@item.Kind" srclang="@item.SrcLang" src="@item.Src" default>
+            }
+            else
+            {
+                <track label="@item.Label" kind="@item.Kind" srclang="@item.SrcLang" src="@item.Src">
+            }
 
-    Sorry, your browser doesn't support embedded videos.
+        }
+    }
+    @NotSupportedText
 </video>
-
-@code {
-
-}

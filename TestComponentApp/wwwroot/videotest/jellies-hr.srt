@@ -1,0 +1,23 @@
+﻿1
+00:00:00,970 --> 00:00:03,000
+Meduze u kanadskom akvariju
+
+2
+00:00:04,080 --> 00:00:06,080
+Dude - biž ća!
+
+3
+00:00:9,350 --> 00:00:13,350
+Tresu mi se ruke...
+
+4
+00:00:17,000 --> 00:00:22,000
+a, ovo je bolje...
+
+5
+00:00:24,825 --> 00:00:27,825
+Pro Tip: Blazor is awesome!
+
+5
+00:00:33,000 --> 00:00:41,000
+Hvala što ste gledali, ako ste došli do ovdje to znači da moja komponenta radi!

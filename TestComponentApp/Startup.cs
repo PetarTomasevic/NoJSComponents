@@ -11,6 +11,7 @@ using NoJS.Modal;
 using NoJS.Toast;
 using Microsoft.Extensions.Logging;
 using NoJS.DocumentViewer;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace TestComponentApp
 {
@@ -28,7 +29,7 @@ namespace TestComponentApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddServerSideBlazor();
+            services.AddServerSideBlazor().AddCircuitOptions(options => { options.DetailedErrors = true; });
             services.AddNoJSModal();
             services.AddNoJSToast();
             services.AddNoJSCard();
@@ -53,8 +54,17 @@ namespace TestComponentApp
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
+            //var contentTypeProvider = new FileExtensionContentTypeProvider();
+            //if (!contentTypeProvider.Mappings.ContainsKey(".srt"))
+            //{
+            //    contentTypeProvider.Mappings.Add(".srt", "text/srt");
+            //}
+            app.UseStaticFiles(
+            //new StaticFileOptions
+            //{
+            //    ContentTypeProvider = contentTypeProvider
+            //}
+                );
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
