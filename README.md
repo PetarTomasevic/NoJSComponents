@@ -1,4 +1,4 @@
-#### Components tested in production environment;
+#### Components tested and used in applications;
 
 ##### [Modal Component](https://github.com/PetarTomasevic/NoJSComponents/blob/master/NoJS.Modal/README.md)
 
