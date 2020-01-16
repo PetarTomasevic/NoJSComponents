@@ -1,17 +1,14 @@
-using System;
-using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using NoJS.Card;
+using NoJS.DocumentViewer;
 using NoJS.Modal;
 using NoJS.Toast;
-using Microsoft.Extensions.Logging;
-using NoJS.DocumentViewer;
-using Microsoft.AspNetCore.StaticFiles;
 
 namespace TestComponentApp
 {
@@ -28,6 +25,13 @@ namespace TestComponentApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
             services.AddRazorPages();
             services.AddServerSideBlazor().AddCircuitOptions(options => { options.DetailedErrors = true; });
             services.AddNoJSModal();
@@ -41,6 +45,7 @@ namespace TestComponentApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
         {
+            app.UseCors("CorsPolicy");
             if (env.IsDevelopment())
             {
                 logger.LogInformation("In development enviroment");

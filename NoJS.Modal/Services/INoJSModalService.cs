@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
+using System;
 
 namespace NoJS.Modal.Services
 {
@@ -26,8 +26,8 @@ namespace NoJS.Modal.Services
         void Show(string title, Type componentType, NoJSModalOptions options);
 
         /// <summary>
-        /// Shows the modal using the specified <paramref name="title"/> and <paramref name="componentType"/>, 
-        /// passing the specified <paramref name="parameters"/>. 
+        /// Shows the modal using the specified <paramref name="title"/> and <paramref name="componentType"/>,
+        /// passing the specified <paramref name="parameters"/>.
         /// </summary>
         /// <param name="title">Modal title.</param>
         /// <param name="componentType">Type of component to display.</param>
@@ -35,8 +35,8 @@ namespace NoJS.Modal.Services
         void Show(string title, Type contentType, NoJSModalParameters parameters);
 
         /// <summary>
-        /// Shows the modal using the specified <paramref name="title"/> and <paramref name="componentType"/>, 
-        /// passing the specified <paramref name="parameters"/> and setting a custom CSS style. 
+        /// Shows the modal using the specified <paramref name="title"/> and <paramref name="componentType"/>,
+        /// passing the specified <paramref name="parameters"/> and setting a custom CSS style.
         /// </summary>
         /// <param name="title">Modal title.</param>
         /// <param name="componentType">Type of component to display.</param>

@@ -1,13 +1,13 @@
-﻿using NoJS.Modal.Services;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
+using NoJS.Modal.Services;
 using System;
 
 namespace NoJS.Modal
 {
     public class NoJSModalBase : ComponentBase, IDisposable
     {
-        const string DefaultStyle = "nojs-modal";
-        const string DefaultPosition = "nojs-modal-center";
+        private const string DefaultStyle = "nojs-modal";
+        private const string DefaultPosition = "nojs-modal-center";
 
         [Inject] protected INoJSModalService NoJSModalService { get; set; }
 

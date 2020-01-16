@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NoJS.Card
+﻿namespace NoJS.Card
 {
     public class NoJSCardOptions
     {

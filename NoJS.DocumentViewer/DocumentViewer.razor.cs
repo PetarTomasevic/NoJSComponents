@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using NoJS.DocumentViewer.Services;
-using System;
 
 namespace NoJS.DocumentViewer
 {

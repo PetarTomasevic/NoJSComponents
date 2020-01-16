@@ -1,7 +1,5 @@
 ﻿@page "/videoviewer"
-@*<NoJS.Video.VideoViewer VideoSource="@videoSource" VideoType="@videoType" VideoWidth="100%"></NoJS.Video.VideoViewer>*@
-
-subtitles
+<NoJS.Video.VideoViewer VideoSource="@videoSource" VideoType="@videoType" VideoWidth="100%"></NoJS.Video.VideoViewer>
 
 <NoJS.Video.VideoViewer VideoSource="@videoSource2"
                         VideoType="@videoType"
@@ -11,9 +9,6 @@ subtitles
                         SubtitlesList="@languagesList()"
                         VideoId="@video2ID"></NoJS.Video.VideoViewer>
 
-<video width="400" controls>
-    <source src="@videoSource" type="video/mp4">
-</video>
 @code {
 
     public string videoSource = "https://localhost:44378/videotest/testvideo.mp4";
@@ -21,6 +16,9 @@ subtitles
     public string poster = "https://localhost:44378/videotest/blazor.png";
     public string videoType = "video/mp4";
     public string video2ID = "jellies";
+
+    string texten = System.IO.File.ReadAllText(@"C:\pdftest\jellies-en.vtt");
+    string texthr = System.IO.File.ReadAllText(@"C:\pdftest\jellies-hr.vtt");
 
     public List<NoJS.Video.Data.TrackItem> languagesList()
     {
@@ -31,7 +29,7 @@ subtitles
         item1.Kind = "subtitles";
         item1.Label = "English";
         item1.SrcLang = "en";
-        item1.Src = "https://localhost:44378/videotest/jellies-en.vtt";
+        item1.Src = texten;
 
         generateSubtitles.Add(item1);
 
@@ -40,7 +38,7 @@ subtitles
         item2.Kind = "subtitles";
         item2.Label = "Croatian";
         item2.SrcLang = "hr";
-        item2.Src = "https://localhost:44378/videotest/jellies-hr.vtt";
+        item2.Src = texthr;
 
         generateSubtitles.Add(item2);
 
