@@ -1,0 +1,76 @@
+﻿@using System.Linq.Expressions
+
+@typeparam TValue
+@inherits InputBase<TValue>
+
+<input type="number" id="Id" name="Id" class="form-control" @bind-value=CurrentValueAsString />
+@code {
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string CustomRegex { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = "Not a valid integer number";
+    [Parameter] public Expression<Func<TValue>> ValidationFor { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool ShowDefaultOption { get; set; } = true;
+
+    private static Regex Regex = new Regex("^[+]?\\d*$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    protected override bool TryParseValueFromString(string value, out TValue result, out string validationErrorMessage)
+    {
+        var targetType = Nullable.GetUnderlyingType(typeof(TValue)) ?? typeof(TValue);
+
+        if (targetType == typeof(int))
+        {
+            bool parsedValue = false;
+            if (!String.IsNullOrEmpty(CustomRegex))
+            {
+                Regex = new Regex(CustomRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            }
+            Match match = Regex.Match(value);
+            if (!match.Success)
+            {
+                validationErrorMessage = ErrorMessage;
+                result = (TValue)(object)value;
+                return false;
+            }
+
+            parsedValue = TryParseInteger(value, out result);
+            if (parsedValue)
+            {
+                validationErrorMessage = null;
+                result = (TValue)(object)result;
+                return true;
+            }
+            else
+            {
+                validationErrorMessage = ErrorMessage;
+                result = (TValue)(object)result;
+                return false;
+            }
+        }
+        else
+        {
+            validationErrorMessage = ErrorMessage;
+            result = (TValue)(object)0;
+            return false;
+
+        }
+    }
+
+    static bool TryParseInteger(string value, out TValue result)
+    {
+        int number;
+        var isInt = Int32.TryParse(value, out number);
+        if (isInt)
+        {
+            result = (TValue)(object)number;
+            return true;
+        }
+        else
+        {
+            result = default;
+            return false;
+        }
+    }
+
+}

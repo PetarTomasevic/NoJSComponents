@@ -7,9 +7,9 @@ namespace NoJS.Toast.Services
     {
         event Action OnHide;
 
-        event Action<string, NoJSToastLevel> OnShow;
+        event Action<string, NoJSToastLevel, string> OnShow;
 
-        void ShowToast(string message, NoJSToastLevel level, double interval);
+        void ShowToast(string message, NoJSToastLevel level, double interval, string headerTitle);
 
         void StartCountdown(double interval);
 

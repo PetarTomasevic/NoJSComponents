@@ -1,0 +1,37 @@
+﻿@using System.Linq.Expressions
+
+@typeparam T
+@inherits InputBase<T>
+
+<input type="text" id="Id" name="Id" class="form-control" @bind-value=CurrentValueAsString />
+@code {
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string CustomRegex { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = "Not a valid IP Address";
+    [Parameter] public Expression<Func<T>> ValidationFor { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool ShowDefaultOption { get; set; } = true;
+
+    private static Regex Regex = new Regex("^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    protected override bool TryParseValueFromString(string value, out T result, out string validationErrorMessage)
+    {
+        if (!String.IsNullOrEmpty(CustomRegex))
+        {
+            Regex = new Regex(CustomRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        }
+        Match match = Regex.Match(value);
+        if (!match.Success)
+        {
+            validationErrorMessage = ErrorMessage;
+            result = (T)(object)value;
+            return false;
+        }
+        validationErrorMessage = null;
+        result = (T)(object)value;
+        return true;
+
+    }
+
+}

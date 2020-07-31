@@ -23,8 +23,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NoJS.Card\NoJS.Card.csproj" />
+    <ProjectReference Include="..\NoJS.InputHelpers\NoJS.InputHelpers.csproj" />
     <ProjectReference Include="..\NoJS.Toast\NoJS.Toast.csproj" />
     <ProjectReference Include="..\NoJS.Video\NoJS.Video.csproj" />
+    <ProjectReference Include="..\NoJSWizard\NoJS.Wizard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,5 +35,12 @@
 
   <ItemGroup>
     <None Include="wwwroot\videotest\testvideo.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\js\nojscomponent.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 </Project>

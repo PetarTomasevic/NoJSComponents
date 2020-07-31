@@ -1,0 +1,38 @@
+﻿@using System.Linq.Expressions
+
+@typeparam T
+@inherits InputBase<T>
+
+<input type="text" id="Id" name="Id" class="form-control" @bind-value=CurrentValueAsString />
+@code {
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string CustomRegex { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = "Not a valid Credit Card";
+    [Parameter] public Expression<Func<T>> ValidationFor { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool ShowDefaultOption { get; set; } = true;
+
+    //For credit card numbers from MC, Visa, Amex, Diners/CarteBlanche, Discover/Novus, Enroute, and JCB. Does as much as I feel is possible using regex (doesn't do MOD 10). Javascript safe.
+    private static Regex Regex = new Regex("^3(?:[47]\\d([ -]?)\\d{4}(?:\\1\\d{4}){2}|0[0-5]\\d{11}|[68]\\d{12})$|^4(?:\\d\\d\\d)?([ -]?)\\d{4}(?:\\2\\d{4}){2}$|^6011([ -]?)\\d{4}(?:\\3\\d{4}){2}$|^5[1-5]\\d\\d([ -]?)\\d{4}(?:\\4\\d{4}){2}$|^2014\\d{11}$|^2149\\d{11}$|^2131\\d{11}$|^1800\\d{11}$|^3\\d{15}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    protected override bool TryParseValueFromString(string value, out T result, out string validationErrorMessage)
+    {
+        if (!String.IsNullOrEmpty(CustomRegex))
+        {
+            Regex = new Regex(CustomRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        }
+        Match match = Regex.Match(value);
+        if (!match.Success)
+        {
+            validationErrorMessage = ErrorMessage;
+            result = (T)(object)value;
+            return false;
+        }
+        validationErrorMessage = null;
+        result = (T)(object)value;
+        return true;
+
+    }
+
+}

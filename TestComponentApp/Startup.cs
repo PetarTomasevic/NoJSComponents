@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +8,7 @@ using NoJS.Card;
 using NoJS.DocumentViewer;
 using NoJS.Modal;
 using NoJS.Toast;
+using NoJS.Wizard;
 
 namespace TestComponentApp
 {
@@ -38,6 +38,7 @@ namespace TestComponentApp
             services.AddNoJSToast();
             services.AddNoJSCard();
             services.AddNoJSDocumentViewer();
+            services.AddNoJSWizard();
 
             //Logiranje
         }

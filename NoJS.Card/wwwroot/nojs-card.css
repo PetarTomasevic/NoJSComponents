@@ -3,10 +3,10 @@
     used from a library project/package.
 */
 
-.nojs-card-item-active {
+.nojs-card-itenojs-active {
     display: flex;
 }
 
-.nojs-card-item-inactive {
+.nojs-card-itenojs-inactive {
     display: none;
 }

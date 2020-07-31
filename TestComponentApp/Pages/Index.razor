@@ -12,10 +12,10 @@
 <button @onclick="@ShowModalAsYesNoPrompt" class="btn btn-primary">Show Modal styled as a prompt</button>
 
 TOAST test:
-<button class="btn btn-info" @onclick="@(() => NoJSToast.ShowToast("I'm an INFO message", NoJSToastLevel.Info,3000))">Info Toast</button>
-<button class="btn btn-success" @onclick="@(() => NoJSToast.ShowToast("I'm a SUCCESS message", NoJSToastLevel.Success,1000))">Success Toast</button>
-<button class="btn btn-warning" @onclick="@(() => NoJSToast.ShowToast("I'm a WARNING message", NoJSToastLevel.Warning,4000))">Warning Toast</button>
-<button class="btn btn-danger" @onclick="@(() => NoJSToast.ShowToast("I'm an ERROR message", NoJSToastLevel.Error,5000))">Error Toast</button>
+<button class="btn btn-info" @onclick="@(() => NoJSToast.ShowToast("I'm an INFO message", NoJSToastLevel.Info,3000,"Informacija"))">Info Toast</button>
+<button class="btn btn-success" @onclick="@(() => NoJSToast.ShowToast("I'm a SUCCESS message", NoJSToastLevel.Success,1000,"Uspjeh"))">Success Toast</button>
+<button class="btn btn-warning" @onclick="@(() => NoJSToast.ShowToast("I'm a WARNING message", NoJSToastLevel.Warning,4000,"Upozorenje"))">Warning Toast</button>
+<button class="btn btn-danger" @onclick="@(() => NoJSToast.ShowToast("I'm an ERROR message", NoJSToastLevel.Error,5000,"Greška"))">Error Toast</button>
 
 Card Test:
 <NoJSCard FooterIsVisible="true" HeaderIsVisible="true" Title="@(titleText)" Footer="@(footerText)">
@@ -26,9 +26,9 @@ Card Test2:
 <NoJSCard FooterIsVisible="false" HeaderIsVisible="false" Title="@(titleText)" Footer="@(footerText)">
     <div class="simple-form">
 
-        <div class="form-group">
+        <div class="fornojs-group">
             <label for="first-name">First Name</label>
-            <input type="text" class="form-control" id="first-name" placeholder="Enter First Name" />
+            <input type="text" class="fornojs-control" id="first-name" placeholder="Enter First Name" />
         </div>
     </div>
 </NoJSCard>

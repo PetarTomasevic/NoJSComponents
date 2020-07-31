@@ -1,0 +1,37 @@
+﻿@using System.Linq.Expressions
+
+@typeparam T
+@inherits InputBase<T>
+
+<input type="email" id="Id" name="Id" class="form-control" @bind-value=CurrentValueAsString />
+@code {
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string CustomRegex { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = "Not a valid Email";
+    [Parameter] public Expression<Func<T>> ValidationFor { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool ShowDefaultOption { get; set; } = true;
+
+    private static Regex Regex = new Regex("^[A-Za-z0-9](\\.[\\w\\-]|[\\w\\-][\\w\\-])(\\.[\\w\\-]|[\\w\\-]?[\\w\\-]){0,30}[\\w\\-]?@[A-Za-z0-9\\-]{3,63}\\.[a-zA-Z]{2,6}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    protected override bool TryParseValueFromString(string value, out T result, out string validationErrorMessage)
+    {
+        if (!String.IsNullOrEmpty(CustomRegex))
+        {
+            Regex = new Regex(CustomRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        }
+        Match match = Regex.Match(value);
+        if (!match.Success)
+        {
+            validationErrorMessage = ErrorMessage;
+            result = (T)(object)value;
+            return false;
+        }
+        validationErrorMessage = null;
+        result = (T)(object)value;
+        return true;
+
+    }
+
+}

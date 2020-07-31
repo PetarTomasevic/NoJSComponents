@@ -1,0 +1,42 @@
+﻿@page "/inputtest"
+@using Data
+<EditForm @ref="testform" OnValidSubmit="SubmitForm" Model="exampleDataModel">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label class="form-label">Phone</label>
+        <InputPhone class="form-control" Id="phone" ErrorMessage="something is wrong" @bind-Value="exampleDataModel.Phone" />
+        <ValidationMessage For="@(()=> exampleDataModel.Phone)" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <InputEmail Id="email" class="form-control" @bind-Value="exampleDataModel.Email" />
+        <ValidationMessage For="@(()=> exampleDataModel.Email)" />
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Number</label>
+        <InputNumberRegex Id="number" class="form-control" CustomRegex="^[0-9]*$" @bind-Value="exampleDataModel.IntegerNumber" />
+        <ValidationMessage For="@(()=> exampleDataModel.IntegerNumber)" />
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Credit Card</label>
+        <InputCreditCard Id="creditcard" class="form-control" @bind-Value="exampleDataModel.CreditCardNumber" />
+        <ValidationMessage For="@(()=> exampleDataModel.CreditCardNumber)" />
+    </div>
+    <div class="form-group">
+        <label class="form-label">IP Address</label>
+        <InputIPAddress Id="ipaddress" class="form-control" @bind-Value="exampleDataModel.IPAddress" />
+        <ValidationMessage For="@(()=> exampleDataModel.IPAddress)" />
+    </div>
+    <button type="submit" class="btn btn-outline-primary btn-sm">Test</button>
+</EditForm>
+
+@code{
+    EditForm testform { get; set; }
+    InputTestFormData exampleDataModel = new InputTestFormData();
+    async Task SubmitForm()
+    {
+
+    }
+}

@@ -1,0 +1,37 @@
+﻿@using System.Linq.Expressions
+
+@typeparam T
+@inherits InputBase<T>
+
+<input type="url" id="Id" name="Id" class="form-control" @bind-value=CurrentValueAsString />
+@code {
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public string CustomRegex { get; set; }
+    [Parameter] public string ErrorMessage { get; set; } = "Not a valid URL";
+    [Parameter] public Expression<Func<T>> ValidationFor { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public bool ShowDefaultOption { get; set; } = true;
+
+    private static Regex Regex = new Regex("((mailto\\:|(news|(ht|f)tp(s?))\\://){1}\\S+)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+    protected override bool TryParseValueFromString(string value, out T result, out string validationErrorMessage)
+    {
+        if (!String.IsNullOrEmpty(CustomRegex))
+        {
+            Regex = new Regex(CustomRegex, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        }
+        Match match = Regex.Match(value);
+        if (!match.Success)
+        {
+            validationErrorMessage = ErrorMessage;
+            result = (T)(object)value;
+            return false;
+        }
+        validationErrorMessage = null;
+        result = (T)(object)value;
+        return true;
+
+    }
+
+}

@@ -1,7 +1,10 @@
 ﻿
 # Toast Component
-Is component to enable toast notifications in application.
+Is component to enable toast notifications in Blazor application.
 
+Version with custom title Headers
+      
+    Install-Package NoJS.Toast -Version 1.0.2
 
 To install NuGet package run
 

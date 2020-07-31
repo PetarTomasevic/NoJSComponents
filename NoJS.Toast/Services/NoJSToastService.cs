@@ -5,15 +5,15 @@ namespace NoJS.Toast.Services
 {
     public class NoJSToastService : INoJSToastService, IDisposable
     {
-        public event Action<string, NoJSToastLevel> OnShow;
+        public event Action<string, NoJSToastLevel, string> OnShow;
 
         public event Action OnHide;
 
         private Timer Countdown;
 
-        public void ShowToast(string message, NoJSToastLevel level, double interval)
+        public void ShowToast(string message, NoJSToastLevel level, double interval, string headerTitle)
         {
-            OnShow?.Invoke(message, level);
+            OnShow?.Invoke(message, level, headerTitle);
             StartCountdown(interval);
         }
 

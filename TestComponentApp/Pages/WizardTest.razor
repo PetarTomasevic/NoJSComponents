@@ -1,0 +1,35 @@
+﻿@page "/wizard"
+<NoJS.Wizard.NoJSWizard EnableJumpToAnyStep="true">
+    <Steps>
+        <NoJS.Wizard.NoJSWizardStep Title="Step1"  Identifier="1">
+            <Content>
+                <div class="row">
+                    <p>This is the first step. You can enter something useful in here.</p>
+                </div>
+            </Content>
+        </NoJS.Wizard.NoJSWizardStep>
+        <NoJS.Wizard.NoJSWizardStep Title="Step2" Identifier="1" >
+            <Content>
+
+                <div class="row">
+                    <p>Wow, you've reached the second step!</p>
+                </div>
+            </Content>
+        </NoJS.Wizard.NoJSWizardStep>
+        <NoJS.Wizard.NoJSWizardStep Title="Step3" Identifier="1" >
+            <Content>
+
+                <div class="row">
+                    <p>Wow, you've reached the second step!</p>
+                </div>
+            </Content>
+        </NoJS.Wizard.NoJSWizardStep>
+        <NoJS.Wizard.NoJSWizardStep Title="Final Step" Identifier="1" IsVisible="true">
+            <Content>
+                <div class="row">
+                    <p>The final step has been reached. Thank you \o/</p>
+                </div>
+            </Content>
+        </NoJS.Wizard.NoJSWizardStep>
+    </Steps>
+</NoJS.Wizard.NoJSWizard>
